@@ -36,7 +36,7 @@
                                     {{ $category->name }}
                                 </td>
                                 <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img src="{{ Storage::url($category->image) }}" class="w-16 h-16 rounded">
+                                    <img src="{{ Storage::url($category->image) }}" class="object-cover	w-16 h-16 rounded">
                                 </td>
                                 <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $category->description }}
