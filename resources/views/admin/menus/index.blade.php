@@ -25,9 +25,6 @@
                                     Description
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Category
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     Price
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -47,9 +44,6 @@
                                 </td>
                                 <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $menu->description }}
-                                </td>
-                                <td class="px-6 py-4">
-                                    {{ $menu->category }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $menu->price }} $

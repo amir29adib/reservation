@@ -32,7 +32,7 @@
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 for="image">Image</label>
                             <div id="placeholder_image">
-                                <img class="mb-3 w-32 h-32 rounded" src={{ Storage::url($category->image) }}>
+                                <img class="object-cover mb-3 w-32 h-32 rounded" src={{ Storage::url($category->image) }}>
                             </div>
                             <div class="mb-5">
                                 <input

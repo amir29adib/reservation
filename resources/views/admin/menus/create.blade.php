@@ -58,14 +58,15 @@
                         </div>
 
                         <div class="sm:col-span-6">
-                            <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Categories</h3>
-                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                            <h3 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categories</h3>
+                            <ul
+                                class="mb-5 w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                                 @foreach ($categories as $category)
-                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                    <li
+                                        class="w-full border-b last:border-b-0 border-gray-200 rounded-t-lg dark:border-gray-600">
                                         <div class="flex items-center ps-3">
                                             <input id="{{ $category->name }}-checkbox" type="checkbox"
-                                                name="categories[]" value="{{ $category->id }}"
-                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                name="categories[]" value="{{ $category->id }}"                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label for="{{ $category->name }}-checkbox"
                                                 class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $category->name }}</label>
                                         </div>
@@ -74,19 +75,6 @@
                             </ul>
                         </div>
 
-
-                        <div class="sm:col-span-6">
-                            <label for="description"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categories</label>
-                            <div class="mb-5">
-                                <select multiple id="categories" name="categories[]"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
 
                         <button type="submit"
                             class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Store</button>

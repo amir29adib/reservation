@@ -59,17 +59,6 @@ class MenuController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -78,8 +67,7 @@ class MenuController extends Controller
     public function edit(Menu $menu)
     {
         $categories = Category::all();
-        $menu_categories = $this->getCategories($menu->id);
-        return view('admin.menus.edit' , compact('menu','categories' , 'menu_categories'));
+        return view('admin.menus.edit' , compact('menu','categories'));
     }
 
     /**
@@ -110,6 +98,10 @@ class MenuController extends Controller
             'price' => $request->price,
             'image' => $image,
         ]);
+        
+        if($request->has('categories')) {
+            $menu->categories()->sync($request->categories);
+        }
 
         return redirect()->route('admin.menus.index');
     }
@@ -125,8 +117,5 @@ class MenuController extends Controller
         Storage::delete($menu->image); 
         $menu->delete();
         return redirect()->route('admin.menus.index');
-    }
-    public function getCategories($menu_id) {
-        return DB::table('category_menu')->where('menu_id', $menu_id)->get();
     }
 }
